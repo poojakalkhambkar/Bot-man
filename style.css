@@ -31,11 +31,12 @@ html,body{
 }
 
 .wrapper{
-    width: 370px;
+    width: 350px;
     background: #fff;
     border-radius: 5px;
     border: 1px solid lightgrey;
     border-top: 0px;
+    height: 500px;
 }
 .wrapper .title{
     background: #007bff;
@@ -45,7 +46,7 @@ html,body{
     line-height: 60px;
     text-align: center;
     border-bottom: 1px solid #006fe6;
-    border-radius: 5px 5px 0 0;
+    border-radius: 1px 1px 0 0;
 }
 .wrapper .form{
     padding: 20px 15px;
@@ -90,12 +91,13 @@ html,body{
 }
 .wrapper .typing-field{
     display: flex;
-    height: 60px;
+    height: 40px;
     width: 100%;
     align-items: center;
     justify-content: space-evenly;
     background: #efefef;
-    border-top: 1px solid #d9d9d9;
+    /*border-top: 1px solid #21252947;*/
+    border-color: 1px solid #21252947;
     border-radius: 0 0 5px 5px;
 }
 .wrapper .typing-field .input-data{
@@ -127,7 +129,7 @@ html,body{
 .wrapper .typing-field .input-data button{
     position: absolute;
     right: 5px;
-    top: 50%;
+    /* top: 100%; */
     height: 30px;
     width: 65px;
     color: #fff;
@@ -148,4 +150,24 @@ html,body{
 }
 .typing-field .input-data button:hover{
     background: #006fef;
+}
+@media only screen and (max-width: 480px) {
+    .typing-field{
+        margin-top: 120px;
+    }
+    #popup{
+        width: 366px;
+        height: 700px;
+        left: 0px;
+        right: 0px ;
+    }
+}
+@media only screen and (min-width: 1000px) {
+    /* .typing-field{
+        margin-top: 120px;
+    } */
+    .wrapper{
+        margin-left: 1065px;
+        margin-top:306px;
+    }
 }

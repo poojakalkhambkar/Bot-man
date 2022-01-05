@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SIAMAQ</title>
-    <link rel="stylesheet" href="style.css">
+    <link  rel="stylesheet"href="style.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -73,13 +73,104 @@
 }
 
 
+
+
+
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+.open-button {
+  /* background-color: #555; */
+  color: white;
+  padding: 16px 20px;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 0px;
+  width: 110px;
+}
+
+/* The popup form - hidden by default */
+.wrapper {
+  display: none;
+  /* position: fixed; */
+  bottom: 0;
+  /* right: 15px; */
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 200px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+
+    display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+
+  /* background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  border: none; */
+  cursor: pointer;
+  /* width: 100%;
+  margin-bottom:10px; */
+  opacity: 0.8; 
+}
+
+#close {
+    height: 40px;
+    position: relative;
+    left: 102px;
+}
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
 </style>
 
 </head>
-<body style="height: 400px;">
-    <div class="wrapper">
-        <div class="title" style="height: 40px;">SIAMAQ</div>
-        <div class="form">
+
+<body class="bodyclass">
+<a class="open-button" onclick="openForm()" href="#popup" id="popup1"><img src="images/msg.png" style="width: 70px;"> </a>
+ 
+    <div class="wrapper" id="popup">
+
+        <div class="title" style="height: 55px;">SIAMAQ  <img onclick="closeForm()" id="close" src="./images/download.png"> </div>  
+        <div class="form" style="padding: 1px 1px;" style="border-color: black;">
             <div class="bot-inbox inbox">
                 <div class="icon">
                     <i class="fas fa-user"></i>
@@ -91,39 +182,12 @@
                          
                 </div>
             </div>
-
-
             
         </div>
    
   
-        <?php
-              
-
-              $user = 'root';
-              $password = ''; 
-                
-              
-              $database = 'bot'; 
-            
-              $servername='localhost';
-              $mysqli = new mysqli($servername, $user, 
-                              $password, $database);
-            
-              if ($mysqli->connect_error) {
-                  die('Connect Error (' . 
-                  $mysqli->connect_errno . ') '. 
-                  $mysqli->connect_error);
-              }
-                
-              // SQL query to select data from database
-
-              $sql = "SELECT  `queries`,'id' FROM `chatbot`";
-              $result = $mysqli->query($sql);
-              $mysqli->close(); 
-              
-        ?>
-         <div class="typing-field" style="height: 40px;">
+       
+         <div class="typing-field">
     
             
                 <div class="dropup" onclick="myFunction()">
@@ -131,7 +195,33 @@
                     <div class="dropup-content" id="dropup" onscroll="scrollFunction()">
                     <ui>
                         
-                                <?php   
+                                <?php  
+                              
+              
+
+                                 $user = 'root';
+                                 $password = ''; 
+                                   
+                                 
+                                 $database = 'bot'; 
+                               
+                                 $servername='localhost';
+                                 $mysqli = new mysqli($servername, $user, 
+                                                 $password, $database);
+                               
+                                 if ($mysqli->connect_error) {
+                                     die('Connect Error (' . 
+                                     $mysqli->connect_errno . ') '. 
+                                     $mysqli->connect_error);
+                                 }
+                                   
+                                 // SQL query to select data from database
+                   
+                                 $sql = "SELECT  `queries`,'id' FROM `chatbot`";
+                                 $result = $mysqli->query($sql);
+                                 $mysqli->close(); 
+                                 
+                         
                                      while($rows=$result->fetch_assoc())
                                       {
                                           $id = $rows['queries'];   
@@ -155,10 +245,11 @@
             </div>
        
     </div>
+   
     </div>
-
+    
   
-
+    
     <script>
 
 
@@ -236,7 +327,19 @@
                                 });
                         });
                     });
+
+
+                    function openForm() {
+  document.getElementById("popup").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("popup").style.display = "none";
+}
+
+                 
     </script>
+
 
 </body>
    
