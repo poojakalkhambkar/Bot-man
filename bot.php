@@ -76,22 +76,27 @@
 </style>
 
 </head>
-<body>
+<body style="height: 400px;">
     <div class="wrapper">
-        <div class="title">SIAMAQ</div>
+        <div class="title" style="height: 40px;">SIAMAQ</div>
         <div class="form">
             <div class="bot-inbox inbox">
                 <div class="icon">
                     <i class="fas fa-user"></i>
                 </div>
                 <div class="msg-header">
-                    <p style="background-color: #f1f1f1; color: #121111; width: 280px; height: auto">Hi,<br>
+                    <p style="background-color: #f1f1f1; color: #121111; width: 280px; height: auto;">Hi,<br>
                        This is jenica from Siamaq Consultancy pvt Ltd.<br>
                     </p>      
                          
                 </div>
             </div>
+
+
+            
         </div>
+   
+  
         <?php
               
 
@@ -118,7 +123,7 @@
               $mysqli->close(); 
               
         ?>
-         <div class="typing-field">
+         <div class="typing-field" style="height: 40px;">
     
             
                 <div class="dropup" onclick="myFunction()">
@@ -149,6 +154,7 @@
                 <button id="send-btn">Send</button>
             </div>
        
+    </div>
     </div>
 
   
@@ -200,29 +206,6 @@
          }
 
 
-            // function getmessage(id) 
-            // {
-            //      var getquestion = "#getquestion"+id;
-            //        $value = document.getElementById(getquestion);
-            //        //alert (id);
-            //        $msg = '<div class="user-inbox inbox"><div class="msg-header"><p style="background-color: #2783ed">'+$value+'</p></div></div>';
-            //        $(".form").append($msg);
-            //     //    $("#getquestion").val('');
-                                        
-            //        $.ajax({
-            //                   url: 'message.php',
-            //                   type: 'POST',
-            //                   data: 'text='+$value,
-            //                   success: function(result)
-            //                    {
-            //                          $blog = '<div class="bot-inbox inbox"><div class="icon"><i class="fas fa-user"></i></div><div class="msg-header"><div class="multicolortext">'+result+'</div></div></div>';
-            //                          $(".form").append($blog);
-            //                          $(".form").scrollTop($(".form")[0].scrollHeight);
-            //                    }
-
-            //             });
-            // }
-
                     $(document).ready(function()
                     {
                         $("#send-btn").on("click",function()
@@ -231,6 +214,7 @@
                             
                             $msg = '<div class="user-inbox inbox"><div class="msg-header"><p style="background-color: #2783ed">'+$value+'</p></div></div>';
                             $(".form").append($msg);
+                            $("#send-btn").blur();
                             $("#data").val('');
                             
                             // start ajax code
