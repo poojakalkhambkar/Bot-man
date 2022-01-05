@@ -52,7 +52,7 @@
     word-break: break-all;
 }
 
-.dropup-content a {
+.dropup-content input {
 
 
   border-color: transparent;
@@ -66,7 +66,7 @@
 
 }
 
-.dropup-content table {background-color: #007bff}
+.dropup-content input {background-color: #007bff}
 
 .dropup:hover .dropup-content {
   display: block;
@@ -129,10 +129,12 @@
                                 <?php   
                                      while($rows=$result->fetch_assoc())
                                       {
-                                          $id = $rows['queries'];    
+                                          $id = $rows['queries'];   
                                 ?>
-                                            <a style="color: white;" onclick="getmessage(<?php echo $id; ?>)"> <?php echo $rows['queries'];?> </a>
-                                     
+                                     <input value="<?php echo $rows['queries'];?>"
+                                      onclick="getmessage('<?php echo $id;?>')" 
+                                      id="getquestion('<?php echo $rows['queries']?>')">
+                                            
                                 <?php
                                         }
                                 ?>
@@ -173,31 +175,53 @@
               document.getElementById("dropup");
         }
 
-
-
-            function getmessage(id) 
-            {
-                alert(id)
-                //  var getquestion =  id;
-                //    $values = document.getElementById("#id").value;
-                //    alert (id);
-                //    $msg = '<div class="user-inbox inbox"><div class="msg-header"><p style="background-color: #2783ed">'+$values+'</p></div></div>';
-                //    $(".form").append($msg);
-                // //    $("#getquestion").val('');
+        // $("#getquestion").val();
+        function getmessage(id)
+        {
+           var getquestion = id;
+           $value = getquestion;
+       
+              $msg = '<div class="user-inbox inbox"><div class="msg-header"><p style="background-color: #2783ed">'+$value+'</p></div></div>';
+              $(".form").append($msg);
+                  $("#getquestion").val('');
                                         
-                //    $.ajax({
-                //               url: 'message.php',
-                //               type: 'POST',
-                //               data: 'text='+$values,
-                //               success: function(result)
-                //                {
-                //                      $blog = '<div class="bot-inbox inbox"><div class="icon"><i class="fas fa-user"></i></div><div class="msg-header"><div class="multicolortext">'+result+'</div></div></div>';
-                //                      $(".form").append($blog);
-                //                      $(".form").scrollTop($(".form")[0].scrollHeight);
-                //                }
+                   $.ajax({
+                              url: 'message.php',
+                              type: 'POST',
+                              data: 'text='+$value,
+                              success: function(result)
+                               {
+                                     $blog = '<div class="bot-inbox inbox"><div class="icon"><i class="fas fa-user"></i></div><div class="msg-header"><div class="multicolortext">'+result+'</div></div></div>';
+                                     $(".form").append($blog);
+                                     $(".form").scrollTop($(".form")[0].scrollHeight);
+                               }
 
-                //         });
-            }
+                        });
+         }
+
+
+            // function getmessage(id) 
+            // {
+            //      var getquestion = "#getquestion"+id;
+            //        $value = document.getElementById(getquestion);
+            //        //alert (id);
+            //        $msg = '<div class="user-inbox inbox"><div class="msg-header"><p style="background-color: #2783ed">'+$value+'</p></div></div>';
+            //        $(".form").append($msg);
+            //     //    $("#getquestion").val('');
+                                        
+            //        $.ajax({
+            //                   url: 'message.php',
+            //                   type: 'POST',
+            //                   data: 'text='+$value,
+            //                   success: function(result)
+            //                    {
+            //                          $blog = '<div class="bot-inbox inbox"><div class="icon"><i class="fas fa-user"></i></div><div class="msg-header"><div class="multicolortext">'+result+'</div></div></div>';
+            //                          $(".form").append($blog);
+            //                          $(".form").scrollTop($(".form")[0].scrollHeight);
+            //                    }
+
+            //             });
+            // }
 
                     $(document).ready(function()
                     {
