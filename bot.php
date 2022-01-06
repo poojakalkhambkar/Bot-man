@@ -72,6 +72,10 @@
   display: block;
 }
 
+/* #popup{
+  margin-top: 925px;
+  margin-left: 2526px;
+} */
 
 
 
@@ -146,10 +150,11 @@ body {font-family: Arial, Helvetica, sans-serif;}
 }
 
 #close {
-    height: 40px;
-    position: relative;
-    left: 102px;
-}
+        height: 40px;
+        position: relative;
+        left: 90px;
+    
+    }
 /* Add a red background color to the cancel button */
 .form-container .cancel {
   background-color: red;

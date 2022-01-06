@@ -153,21 +153,60 @@ html,body{
 }
 @media only screen and (max-width: 480px) {
     .typing-field{
-        margin-top: 120px;
+        margin-top: 0px;
     }
     #popup{
-        width: 366px;
-        height: 700px;
-        left: 0px;
-        right: 0px ;
+        position: fixed;
+        width: 335px;
+        height: 510px;
+        margin-left: 20px;
+        /* margin-top: 1970px;  */
+    }
+    #send-btn{
+        margin-top: 20px;
     }
 }
-@media only screen and (min-width: 1000px) {
-    /* .typing-field{
-        margin-top: 120px;
-    } */
+@media only screen and (min-width: 1200px){
+    .typing-field{
+        margin-top: 100px;
+    }
     .wrapper{
-        margin-left: 1065px;
-        margin-top:306px;
+        margin-left: 1417px;
+        margin-top:430px;
+        height: 600px;
+        width: 390px;
+    }
+   
+}
+@media only screen and (min-width: 1200px){
+    .typing-field{
+        margin-top: 100px;
+    }
+    .wrapper{
+        margin-left: 1417px;
+        margin-top:430px;
+        height: 600px;
+        width: 390px;
+        top: 0px;
+    }
+}
+@media only screen and (min-width: 2500px){
+    .typing-field{
+        margin-top: 100px;
+    }
+    .wrapper{
+        margin-left: 2490px;
+        margin-top: 830px;
+        height: 600px;
+        width: 390px;
+       
+    }
+    #close {
+        height: 40px;
+        position: relative;
+        left: 118px;
+        /* bottom: 21px;
+        width: 18px; */
+    
     }
 }
