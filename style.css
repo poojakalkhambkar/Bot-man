@@ -162,11 +162,23 @@ html,body{
         margin-left: 20px;
         /* margin-top: 1970px;  */
     }
+    #close {
+        height: 0px;
+        position: relative;
+        left: 118px;
+        /* bottom: 21px;*/
+        width: 35px; 
+        left: 99px;
+    
+    }
     #send-btn{
         margin-top: 20px;
     }
+    #img{
+        width: 50px;
+    }
 }
-@media only screen and (min-width: 1200px){
+/* @media only screen and (min-width: 1200px){
     .typing-field{
         margin-top: 100px;
     }
@@ -177,18 +189,34 @@ html,body{
         width: 390px;
     }
    
-}
+} */
 @media only screen and (min-width: 1200px){
     .typing-field{
         margin-top: 100px;
     }
     .wrapper{
-        margin-left: 1417px;
+        margin-left: 1398px;
         margin-top:430px;
         height: 600px;
         width: 390px;
         top: 0px;
     }
+    #close {
+        height: 40px;
+        position: relative;
+        left: 118px;
+        /* bottom: 21px;
+        width: 18px; */
+        left: 115px;
+    
+    }
+    #send-btn{
+       top: 20px;
+    }
+    #img{
+        width: 70px;
+    }
+
 }
 @media only screen and (min-width: 2500px){
     .typing-field{
@@ -198,7 +226,7 @@ html,body{
         margin-left: 2490px;
         margin-top: 830px;
         height: 600px;
-        width: 390px;
+        width: 420px;
        
     }
     #close {
@@ -207,6 +235,13 @@ html,body{
         left: 118px;
         /* bottom: 21px;
         width: 18px; */
+        left: 125px;
     
+    }
+    #send-btn{
+        /* margin-top: 20px; */
+    }
+    #img{
+        width: 70px;
     }
 }

@@ -52,7 +52,7 @@
     word-break: break-all;
 }
 
-.dropup-content input {
+.dropup-content a {
 
 
   border-color: transparent;
@@ -66,7 +66,7 @@
 
 }
 
-.dropup-content input {background-color: #007bff}
+.dropup-content a {background-color: #007bff}
 
 .dropup:hover .dropup-content {
   display: block;
@@ -149,12 +149,12 @@ body {font-family: Arial, Helvetica, sans-serif;}
   opacity: 0.8; 
 }
 
-#close {
+/* #close {
         height: 40px;
         position: relative;
         left: 90px;
     
-    }
+    } */
 /* Add a red background color to the cancel button */
 .form-container .cancel {
   background-color: red;
@@ -170,7 +170,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 </head>
 
 <body class="bodyclass">
-<a class="open-button" onclick="openForm()" href="#popup" id="popup1"><img src="images/msg.png" style="width: 70px;"> </a>
+<a class="open-button" onclick="openForm()" href="#popup" id="popup1"><img src="images/msg.png" id="img"> </a>
  
     <div class="wrapper" id="popup">
 
@@ -231,10 +231,11 @@ body {font-family: Arial, Helvetica, sans-serif;}
                                       {
                                           $id = $rows['queries'];   
                                 ?>
-                                     <input value="<?php echo $rows['queries'];?>"
+                               
+                                     <a value="<?php echo $rows['queries'];?>"
                                       onclick="getmessage('<?php echo $id;?>')" 
-                                      id="getquestion('<?php echo $rows['queries']?>')">
-                                            
+                                      id="getquestion('<?php echo $rows['queries']?>')"><?php echo $rows['queries'];?></a>
+                             
                                 <?php
                                         }
                                 ?>
